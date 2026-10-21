@@ -77,7 +77,7 @@ function StorageDemoContent() {
 
     setItem(params, (res: { code: number; msg?: string; data?: unknown }) => {
       setSetResultCode(res.code)
-      setSetResultMsg(res.msg || (res.code === 0 ? 'Success' : 'Failed'))
+      setSetResultMsg(res.msg || (res.code === 1 ? 'Success' : 'Failed'))
       setSetResultData(res.data)
       addLog({ type: 'setItem', request: reqLog, response: res })
     })
@@ -97,7 +97,7 @@ function StorageDemoContent() {
 
     getItem(params, (res: { code: number; msg?: string; data?: { data?: unknown } }) => {
       setGetResultCode(res.code)
-      setGetResultMsg(res.msg || (res.code === 0 ? 'Success' : 'Failed'))
+      setGetResultMsg(res.msg || (res.code === 1 ? 'Success' : 'Failed'))
       setGetResultData(res.data)
       addLog({ type: 'getItem', request: reqLog, response: res })
     })
